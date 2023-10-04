@@ -12,6 +12,12 @@ This is a repository for a real estate house price prediction project. In this p
 ```commandline
 conda create -p venv python==3.7 -y
 ```
+## Images
+
+<img width="1496" alt="Screenshot 2023-10-04 at 10 51 11 AM" src="https://github.com/ameyagidh/RealEstatePrediction/assets/65457905/2edd2f80-ffca-48cd-8c7c-48b27b92b3c5">
+<img width="1496" alt="Screenshot 2023-10-04 at 10 51 17 AM" src="https://github.com/ameyagidh/RealEstatePrediction/assets/65457905/fc0d6414-d87a-4fb7-96f3-0e6e4718a0e4">
+<img width="1496" alt="Screenshot 2023-10-04 at 9 58 27 AM" src="https://github.com/ameyagidh/RealEstatePrediction/assets/65457905/6c428682-5583-4b69-86de-6c7825345ce7">
+
 
 ## Table of Contents
 
