@@ -2,11 +2,13 @@
 
 This is a repository for a real estate house price prediction project. In this project, we aim to develop a machine learning model that can predict the prices of houses based on various features and attributes. This README file provides an overview of the project, its structure, and instructions on how to use and contribute to it.
 
-Software And Tools Requirements
-Github Account
-HerokuAccount
-VSCodeIDE
-GitCLI
+## Software and Tools Requirements
+
+- [GitHub Account](https://github.com/)
+- [Heroku Account](https://www.heroku.com/)
+- [VSCode IDE](https://code.visualstudio.com/)
+- [Git CLI](https://git-scm.com/)
+
 
 ## Table of Contents
 
