@@ -9,6 +9,9 @@ This is a repository for a real estate house price prediction project. In this p
 - [VSCode IDE](https://code.visualstudio.com/)
 - [Git CLI](https://git-scm.com/)
 
+```commandline
+conda create -p venv python==3.7 -y
+```
 
 ## Table of Contents
 
