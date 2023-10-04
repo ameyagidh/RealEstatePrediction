@@ -1,47 +1,96 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
   <meta charset="UTF-8">
   <title>Property Price Predictor</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
- <div class="login">
-	<h1>Property Price Predictor</h1>
+  <div class="container">
+    <header>
+      <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+      <h1>Property Price Predictor</h1>
+    </header>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-        <input type="text" name="RM" placeholder="RM" required="required" /><br>
-        <input type="text" name="Age" placeholder="Age" required="required" /><br>
-        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-        <input type="text" name="B" placeholder="B" required="required" /><br>
-        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+    <section class="prediction-form">
+      <form action="{{ url_for('predict') }}" method="post">
+        <div class="input-group">
+          <label for="CRIM">Crime Rate (CRIM)</label>
+          <input type="text" name="CRIM" id="CRIM" placeholder="0.0064" required="required" />
+        </div>
+        <div class="input-group">
+          <label for="ZN">Residential Zone (ZN)</label>
+          <input type="text" name="ZN" id="ZN" placeholder="18.0" required="required" />
+        </div>
+        <div class="input-group">
+        <label for="CRIM">Crime Rate (CRIM)</label>
+        <input type="text" name="CRIM" id="CRIM" placeholder="0.0064" required="required" />
+        </div>
+        <div class="input-group">
+        <label for="ZN">Residential Zone (ZN)</label>
+        <input type="text" name="ZN" id="ZN" placeholder="18.0" required="required" />
+        </div>
+        <div class="input-group">
+        <label for="INDUS">Industrial Area (INDUS)</label>
+        <input type="text" name="INDUS" id="INDUS" placeholder="2.2" required="required" />
+        </div>
+    <div class="input-group">
+      <label for="CHAS">Near Charles River (CHAS)</label>
+      <input type="text" name="CHAS" id="CHAS" placeholder="0.0" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="NOX">Nitrogen Oxide Concentration (NOX)</label>
+      <input type="text" name="NOX" id="NOX" placeholder="0.541" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="RM">Number of Rooms (RM)</label>
+      <input type="text" name="RM" id="RM" placeholder="6.621" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="Age">Age of Property (Age)</label>
+      <input type="text" name="Age" id="Age" placeholder="68" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="DIS">Distance to Employment Centers (DIS)</label>
+      <input type="text" name="DIS" id="DIS" placeholder="4.1" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="RAD">Accessibility to Radial Highways (RAD)</label>
+      <input type="text" name="RAD" id="RAD" placeholder="1.0" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="TAX">Property Tax (TAX)</label>
+      <input type="text" name="TAX" id="TAX" placeholder="298" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="PTRATIO">Pupil-Teacher Ratio (PTRATIO)</label>
+      <input type="text" name="PTRATIO" id="PTRATIO" placeholder="15.3" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="B">Proportion of Residents of African American Descent (B)</label>
+      <input type="text" name="B" id="B" placeholder="395" required="required" />
+    </div>
+    <div class="input-group">
+      <label for="LSTAT">Lower Status Population Percentage (LSTAT)</label>
+      <input type="text" name="LSTAT" id="LSTAT" placeholder="5.10" required="required" />
+    </div>
 
 
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+    </section>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-    </form>
-
-   <br>
-   <br>
-
-
- </div>
- {{prediction_text}}
-
+    <section class="prediction-result">
+      <h2>Prediction Result</h2>
+      <p>{{ prediction_text }}</p>
+    </section>
+  </div>
 </body>
+
 </html>
